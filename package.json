@@ -1,0 +1,22 @@
+{
+  "name": "@brycemarshall/repeat-schedule",
+  "version": "0.0.0",
+  "description": "A library for deriving the time of events that recur on a schedule.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryce-marshall/repeat-schedule"
+  },
+  "main": "index",
+  "types": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "repeat",
+    "schedule",
+    "event"
+  ],
+  "author": "Bryce Marshall",
+  "license": "MIT",
+  "dependencies": {}
+}

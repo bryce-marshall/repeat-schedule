@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "build/test",
+  "typings": "test",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./day-of-month-repeat.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@brycemarshall/exception": "^1.1.4",
+    "@brycemarshall/timespan": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "mocha-typescript": "^1.1.8",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  }
+}
