@@ -18,7 +18,7 @@ export class MonthRepeat extends Repeat {
         if (date == null) throw new ArgumentNullException("date");
         ArgumentValidator.validateInteger("date", date);
         if (date < 1 || date > 32)
-            throw new ArgumentOutOfRangeException("interval", 1, 32);
+            throw new ArgumentOutOfRangeException("date", 1, 32);
 
         if (this.interval == null)
             this.interval = 1;
