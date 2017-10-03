@@ -18,5 +18,8 @@
   ],
   "author": "Bryce Marshall",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@brycemarshall/exception": "^1.1.4",
+    "@brycemarshall/timespan": "^1.0.6"
+  }
 }

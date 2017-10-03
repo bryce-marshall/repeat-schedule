@@ -1,5 +1,6 @@
 import { ArgumentNullException, ArgumentException } from "@brycemarshall/exception";
 import { Timespan } from "@brycemarshall/timespan";
+import { trunc } from "./functions";
 
 export class DateHelper {
     /**
@@ -45,7 +46,7 @@ export class DateHelper {
         if (value == null) throw new ArgumentNullException("value");
 
         if (typeof (value) == "number")
-            return Math.trunc(value);
+            return trunc(value);
 
         let result: number = null;
 
@@ -57,13 +58,13 @@ export class DateHelper {
         if (typeof (result) != "number")
             throw new ArgumentException("value")
 
-        return Math.trunc(result);
+        return trunc(result);
     }
 
     static isLeapYear(value: number | Date) {
         if (value == null) throw new ArgumentNullException("value");
         if (typeof (value) == "number")
-            value = Math.trunc(value);
+            value = trunc(value);
         else if (typeof ((<any>value).getFullYear) == "function")
             value = value.getFullYear();
 

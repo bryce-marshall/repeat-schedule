@@ -1,5 +1,7 @@
 # @brycemarshall/repeat-schedule
 
+BETA
+
 A library for deriving the time of events that recur on a schedule.
 
 ## Installation

@@ -1,7 +1,7 @@
 import { Repeat } from "./repeat";
 import { ArgumentException, ArgumentOutOfRangeException, ArgumentNullException } from "@brycemarshall/exception";
-import { ArgumentValidator } from "./argument-validator";
 import { DateHelper } from "./date-helper";
+import { trunc, validateInteger } from "./functions";
 
 /**
  * A Repeat for an event that occurs at the same time of the same calendar day at intervals of a specified number of years.
@@ -14,7 +14,7 @@ export class YearRepeat extends Repeat {
         if (this.interval == null)
             this.interval = 1;
         else {
-            ArgumentValidator.validateInteger("interval", interval);
+            validateInteger("interval", interval);
             if (interval < 1)
                 throw new ArgumentOutOfRangeException("interval", 1);
         }
@@ -37,7 +37,7 @@ export class YearRepeat extends Repeat {
 
         let result = DateHelper.clone(start);
         result.setDate(1);
-        result.setFullYear(evalTime.getFullYear() + this.interval - Math.trunc((evalTime.getFullYear() - start.getFullYear())) % this.interval);
+        result.setFullYear(evalTime.getFullYear() + this.interval - trunc((evalTime.getFullYear() - start.getFullYear())) % this.interval);
         result.setDate(Math.min(start.getDate(), DateHelper.lastDayOfMonth(result)));
 
         return result;

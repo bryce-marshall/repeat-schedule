@@ -5,7 +5,7 @@
   "main": "build/test",
   "typings": "test",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./day-of-month-repeat.spec.ts"
+    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./*.spec.ts"
   },
   "keywords": [],
   "author": "",

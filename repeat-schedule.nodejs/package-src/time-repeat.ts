@@ -1,7 +1,7 @@
 import { ArgumentNullException, ArgumentOutOfRangeException } from "@brycemarshall/exception";
 import { Timespan } from "@brycemarshall/timespan";
-import { ArgumentValidator } from "./argument-validator";
 import { Repeat } from "./repeat";
+import { validateInteger } from "./functions";
 
 /**
  * A Repeat for an event that occurs at a specified time interval.
@@ -12,7 +12,7 @@ export class TimeRepeat extends Repeat {
     constructor(interval: Timespan | number) {
         if (interval == null) throw new ArgumentNullException("interval");
         if (typeof (interval) == "number")
-            ArgumentValidator.validateInteger("interval", interval);
+            validateInteger("interval", interval);
         else
             interval = (<Timespan>interval).totalMilliseconds;
 

@@ -1,7 +1,7 @@
 import { Repeat } from "./repeat";
 import { ArgumentNullException, ArgumentOutOfRangeException } from "@brycemarshall/exception";
-import { ArgumentValidator } from "./argument-validator";
 import { DateHelper } from "./date-helper";
+import { validateInteger } from "./functions";
 
 /**
  * A Repeat for an event that occurs at the same time of day on a specified calendar day of the month, at intervals of a specified number of months.
@@ -16,14 +16,14 @@ export class MonthRepeat extends Repeat {
     constructor(public readonly date: number, public readonly interval?: number) {
         super();
         if (date == null) throw new ArgumentNullException("date");
-        ArgumentValidator.validateInteger("date", date);
+        validateInteger("date", date);
         if (date < 1 || date > 32)
             throw new ArgumentOutOfRangeException("date", 1, 32);
 
         if (this.interval == null)
             this.interval = 1;
         else {
-            ArgumentValidator.validateInteger("interval", interval);
+            validateInteger("interval", interval);
             if (interval < 1)
                 throw new ArgumentOutOfRangeException("interval", 1);
         }

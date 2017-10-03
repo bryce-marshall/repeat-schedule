@@ -1,7 +1,7 @@
 import { Repeat } from "./repeat";
 import { ArgumentNullException, ArgumentOutOfRangeException } from "@brycemarshall/exception";
-import { ArgumentValidator } from "./argument-validator";
 import { DateHelper } from "./date-helper";
+import { validateInteger } from "./functions";
 
 /**
  * A Repeat for an event that occurs at the same time of day at intervals of a specified number of weeks.  
@@ -13,7 +13,7 @@ export class WeekRepeat extends Repeat {
         if (this.interval == null)
             this.interval = 1;
         else {
-            ArgumentValidator.validateInteger("interval", interval);
+            validateInteger("interval", interval);
             if (interval < 1)
                 throw new ArgumentOutOfRangeException("interval", 1);
         }
