@@ -34,13 +34,11 @@ export class DayRepeat extends Repeat {
 
         if (this.days == DayOfWeek.All) return evalTime;
 
-        let count = 0;
         while (true) {
             if (((1 << evalTime.getDay()) & this.days) != 0)
                 break;
 
             evalTime.setDate(evalTime.getDate() + 1);
-            count++;
         }
 
         return evalTime;
