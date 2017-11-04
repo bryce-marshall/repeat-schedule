@@ -11,7 +11,7 @@
         "pretty": true
     },
     "include": [
-        "./repeat-schedule.nodejs/package-src"
+        "../repeat-schedule.nodejs/package-src"
     ],
     "exclude": [
         ".vscode",
